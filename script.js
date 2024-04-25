@@ -10,7 +10,7 @@ const canvas = document.querySelector('canvas.webgl');
 const scene = new THREE.Scene()
 // texture
 const textureloader = new THREE.TextureLoader()
-const texture = textureloader.load("texture.jpg")
+const texture = textureloader.load("./Static/texture.jpg")
 // 
 texture.colorSpace = THREE.SRGBColorSpace
 // mesh
@@ -50,7 +50,7 @@ gui.add(color, "roughness").min(0).max(2).step(0.0001)
 
 // RGBELOader  copy paste
 const rgbe = new RGBELoader()
-rgbe.load("2k.hdr",(environmentMap)=>{
+rgbe.load("./Static/2k.hdr",(environmentMap)=>{
     environmentMap.mapping = THREE.EquirectangularReflectionMapping
     scene.background = environmentMap
     scene.environment = environmentMap
